@@ -8,7 +8,7 @@ module.exports = {
   async execute(interaction) {
     const { voice } = interaction.member;
     if (!voice.channelId) {
-      return interaction.reply("You must be in a voice channel");
+      return interaction.reply("Tiene que estar en un canal de voz para poder usar este comando");
     }
     const connection = joinVoiceChannel({
       channelId: interaction.member.voice.channel.id,
@@ -26,6 +26,6 @@ module.exports = {
 
     player.play(resource);
 
-    await interaction.reply("Radio");
+    await interaction.reply("Iniciando Music Okey");
   },
 };
