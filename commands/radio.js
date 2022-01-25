@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require("@discordjs/builders");
-const { createReadStream } = require("fs");
 const { createAudioResource, StreamType, createAudioPlayer, joinVoiceChannel } = require("@discordjs/voice");
+const { join } = require("path");
 
 module.exports = {
   data: new SlashCommandBuilder().setName("radio").setDescription("Iniciar Radio Music Okey"),
@@ -20,7 +20,7 @@ module.exports = {
 
     const resource = createAudioResource("http://play.musicokey.com:8048/stream");
 
-    resource.volume = 1;
+    resource.volume = 0.5;
 
     connection.subscribe(player);
 
